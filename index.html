@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1H1 PLATFORM Boutique | Luxury Evening & Occasion Wear — Riyadh</title>
+    <meta name="description" content="1H1 PLATFORM Boutique — Curated luxury evening gowns, designer dresses, and occasion wear from Paris, India, and global fashion hubs. Al Malqa, Riyadh.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline';">
+    <meta name="theme-color" content="#B79251">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #F8F5F0;
+            --warm-beige: #EAE2D6;
+            --gold: #B79251;
+            --dark-brown: #3A2E23;
+            --soft-brown: #6B5847;
+            --white: #FFFFFF;
+            --shadow: rgba(58, 46, 35, 0.08);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: var(--dark-brown);
+            background-color: var(--cream);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            background: var(--white);
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--warm-beige);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            color: var(--dark-brown);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+            transition: color 0.3s ease;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.75rem 1.8rem;
+            border-radius: 2px;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .btn-gold:hover {
+            background: #9a7a42;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            padding: 6rem 0;
+            background: linear-gradient(to right, rgba(248, 245, 240, 0.92), rgba(248, 245, 240, 0.75)), url('images/hero-banner.jpg') center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--dark-brown);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--soft-brown);
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        /* ========== SECTION BASE ========== */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-head h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-brown);
+        }
+
+        .section-head p {
+            color: var(--soft-brown);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        /* ========== CATEGORIES ========== */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            aspect-ratio: 4 / 5;
+            background: var(--warm-beige);
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .category-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.75;
+        }
+
+        .category-card > div {
+            position: relative;
+            z-index: 2;
+            color: var(--white);
+        }
+
+        .category-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ========== PRODUCTS GRID ========== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 3rem 2rem;
+        }
+
+        .product-card {
+            text-align: center;
+        }
+
+        .product-image {
+            aspect-ratio: 3 / 4;
+            background: var(--warm-beige);
+            margin-bottom: 1.2rem;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-card h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .price {
+            color: var(--gold);
+            font-size: 1.05rem;
+        }
+
+        /* ========== WHY US ========== */
+        .why-us {
+            background: var(--white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            text-align: center;
+        }
+
+        .why-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.8rem;
+            color: var(--gold);
+        }
+
+        .why-card p {
+            color: var(--soft-brown);
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        /* ========== STORY ========== */
+        .story-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-image {
+            aspect-ratio: 4 / 5;
+            background: var(--warm-beige);
+        }
+
+        .story-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-text p {
+            color: var(--soft-brown);
+            margin-bottom: 1.5rem;
+            font-size: 1.02rem;
+        }
+
+        /* ========== NEWSLETTER ========== */
+        .newsletter {
+            background: var(--warm-beige);
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .newsletter p {
+            color: var(--soft-brown);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.8rem;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.85rem 1.2rem;
+            border: none;
+            border-radius: 2px;
+            font-size: 0.98rem;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--dark-brown);
+            color: #D8CFC4;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4A3F34;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9A8F83;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #25D366;
+            color: white;
+            padding: 0.9rem 1.3rem;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            z-index: 90;
+        }
+
+        .whatsapp-float:hover {
+            background: #1ebe57;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 900px) {
+            .story-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                gap: 1.2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
+            section {
+                padding: 3.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/966554555348" target="_blank" class="whatsapp-float">💬 WhatsApp Us</a>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">1H1 PLATFORM</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#new">New Arrivals</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="#shop" class="btn btn-gold">Shop Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Luxury Evening & Occasion Wear</h1>
+                <p>Curated designer dresses and exclusive collections from Paris, India, and global fashion hubs — right here in Riyadh.</p>
+                <div class="hero-buttons">
+                    <a href="#shop" class="btn btn-gold">View Collection</a>
+                    <a href="https://wa.me/966554555348" target="_blank" class="btn btn-outline">Order via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section id="shop">
+        <div class="container">
+            <div class="section-head">
+                <h2>Shop Your Style</h2>
+                <p>Explore our carefully curated categories — every piece selected with elegance and quality in mind.</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="images/cat-evening.jpg" alt="Evening Dresses">
+                    <div>
+                        <h3>Evening Dresses</h3>
+                        <span>Shop →</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="images/cat-bridal.jpg" alt="Bridal & Event Wear">
+                    <div>
+                        <h3>Bridal & Events</h3>
+                        <span>Shop →</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="images/cat-party.jpg" alt="Party Dresses">
+                    <div>
+                        <h3>Party Dresses</h3>
+                        <span>Shop →</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="images/cat-designer.jpg" alt="Designer Collections">
+                    <div>
+                        <h3>Designer Collections</h3>
+                        <span>Shop →</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="images/cat-new.jpg" alt="New Arrivals">
+                    <div>
+                        <h3>New Arrivals</h3>
+                        <span>Shop →</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="images/cat-sale.jpg" alt="Sale & Discounts">
+                    <div>
+                        <h3>Exclusive Sale</h3>
+                        <span>Shop →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW ARRIVALS -->
+    <section id="new" style="background: var(--white);">
+        <div class="container">
+            <div class="section-head">
+                <h2>Just Arrived</h2>
+                <p>Fresh designer pieces — available now, before they're gone.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image"><img src="images/prod-1.jpg" alt="Product" loading="lazy"></div>
+                    <h3>Elegant Evening Gown</h3>
+                    <p class="price">SAR 1,250</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="images/prod-2.jpg" alt="Product" loading="lazy"></div>
+                    <h3>Lace Detail Dress</h3>
+                    <p class="price">SAR 980</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="images/prod-3.jpg" alt="Product" loading="lazy"></div>
+                    <h3>Silk Occasion Gown</h3>
+                    <p class="price">SAR 1,450</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-image"><img src="images/prod-4.jpg" alt="Product" loading="lazy"></div>
+                    <h3>Embroidered Gown</h3>
+                    <p class="price">SAR 1,100</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY SHOP WITH US -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-head">
+                <h2>Why Shop With 1H1 PLATFORM?</h2>
+                <p>More than a boutique — your destination for trusted luxury fashion in Riyadh.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>Curated Selection</h3>
+                    <p>Every piece handpicked from global fashion hubs — Paris, India, and beyond.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Personal Service</h3>
+                    <p>Need help sizing or styling? We’re here to guide you every step of the way.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Free Alterations</h3>
+                    <p>Complimentary in-house alterations to ensure the perfect fit for every dress.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Exclusive Sale Section</h3>
+                    <p>Visit our upper floor for beautiful pieces at special prices — updated weekly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section id="about">
+        <div class="container story-wrapper">
+            <div class="story-image">
+                <img src="images/boutique-interior.jpg" alt="1H1 PLATFORM Boutique" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div class="story-text">
+                <h2>More Than Just Clothes</h2>
+                <p>1H1 PLATFORM Boutique was founded with one vision: to bring carefully curated luxury fashion to Riyadh — pieces that make you feel confident, elegant, and truly yourself.</p>
+                <p>Located in Al Malqa District, we are proud to be an official stockist for renowned international designers. From Paris runways to Indian craftsmanship, every collection tells a story of quality and style.</p>
+                <p>We believe luxury should feel personal — and every woman deserves to shine.</p>
+                <a href="https://wa.me/966554555348" target="_blank" class="btn btn-gold">Contact Us via WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Be First to Know</h2>
+            <p>Get early access to new arrivals, exclusive offers, and styling inspiration straight to your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn btn-gold">Join</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>1H1 PLATFORM</h3>
+                    <p style="color:#9A8F83; font-size:0.95rem; line-height:1.6;">Luxury evening & occasion wear boutique in Riyadh.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="#shop">All Collections</a></li>
+                        <li><a href="#new">New Arrivals</a></li>
+                        <li><a href="#">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Delivery & Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>Al Malqa, Riyadh</li>
+                        <li> <a href="tel:+966554555348">+966 55 455 5348</a></li>
+                        <li><a href="https://wa.me/966554555348" target="_blank">WhatsApp Us</a></li>
+                        <li> <a href="https://instagram.com/1h1platform" target="_blank">@1h1platform</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Open · Closes 11 PM | Sunday – Friday: 4 PM – 11 PM</p>
+                <p style="margin-top:0.5rem;">&copy; 2026 1H1 PLATFORM Boutique. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
